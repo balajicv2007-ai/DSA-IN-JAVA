@@ -1,0 +1,53 @@
+Java DSA - Math
+
+Total problems: 3
+
+1. 231 - Power of Two
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        while (n > 1) {
+            if (n % 2 != 0) {
+                return false;
+            }
+            n = n / 2;
+        }
+        return true;
+    }
+}
+
+
+2. 326 - Power of Three
+class Solution {
+    public boolean isPowerOfThree(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        while (n > 1) {
+            if (n % 3 != 0) {
+                return false;
+            }
+            n = n / 3;
+        }
+        return true;
+    }
+}
+
+
+3. 342 - Power of Four
+class Solution {
+    public boolean isPowerOfFour(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        while (n > 1) {
+            if (n % 4 != 0) {
+                return false;
+            }
+            n = n / 4;
+        }
+        return true;
+    }
+}
