@@ -1,0 +1,77 @@
+Java DSA - Array (2D / Matrix)
+
+Total problems: 5
+1. 1572 - Matrix Diagonal Sum
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int c = 0;
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[i].length; j++) {
+                if (i == j || i + j == mat.length - 1) {
+                    c += mat[i][j];
+                }
+            }
+        }
+        return c;
+    }
+}
+2. 766 - Toeplitz Matrix
+class Solution {
+    public boolean isToeplitzMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length - 1; i++) {
+            for (int j = 0; j < matrix[0].length - 1; j++) {
+                if (matrix[i][j] != matrix[i + 1][j + 1]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
+3. 1672 - Richest Customer Wealth
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int m = 0;
+        for (int i = 0; i < accounts.length; i++) {
+            int c = 0;
+            for (int j = 0; j < accounts[i].length; j++) {
+                c += accounts[i][j];
+            }
+            if (c > m) {
+                m = c;
+            }
+        }
+        return m;
+    }
+}
+4. 2319 - Check if Matrix Is X-Matrix
+class Solution {
+    public boolean checkXMatrix(int[][] grid) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+                if (i == j || i + j == grid.length - 1) {
+                    if (grid[i][j] == 0) {
+                        return false;
+                    }
+                } else {
+                    if (grid[i][j] != 0) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+}
+5. 867 - Transpose Matrix
+class Solution {
+    public int[][] transpose(int[][] a) {
+        int b[][] = new int[a[0].length][a.length];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[0].length; j++) {
+                b[j][i] = a[i][j];
+            }
+        }
+        return b;
+    }
+}
